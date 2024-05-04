@@ -19,33 +19,48 @@ The basic characteristic of the project is a 3 tier web site deployment with bac
 After spending time with the team and performing an analysis of the system and current processes, a number of challenges were presented.
 
 #### TFS Repository Analysis
-
-- Intermixed code, media, date and infrastrucutre files in the same reporitory. 5 GB repository.
-
-  - Why is this a problem?
+<!-- why is markdown=1 not working with 11ty?> https://v0-5-1.11ty.dev/docs/languages/markdown/-->
+<div class="responsive-two-column-grid" markdown="1">
+    <div>
+    Intermixed code, media, date and infrastrucutre files in the same reporitory. 5 GB repository.
+    </div>
+    <div markdown=1>
+    <b>Why is this a problem?</b>
     
-   - A code repository is tracking text file changes over time and presenting history tracing and revert capabilities. Binary files present issues with these capabilities, inflate the repository and introduce inefficiances into down stream processes. (long checkout times etc...)
+    A code repository is tracking text file changes over time and presenting history tracing and revert capabilities. Binary files present issues with these capabilities, inflate the repository and introduce inefficiances into down stream processes. (long checkout times etc...)
 
-  - Solution. 
-    - Seperate the repository into three and move media onto a file share. Use git LFS if necessary but prefer to manage media requirements through deployment processes. Repositories will split into CODE, INFRASTRUCTURE and DATA.
-- Code, Build and Publish Issues
-  - Years of team turnover and technical debt have left a code base requiring basic house cleaning. Building and deploying straight from the repository imposible.
-  - Build properties.
-  - Multiple project build outputs.
-  - Incorrect Web.config references.
-  - Passwords stored in configs.
-  - Some referenced image files are missing locally. This causes publishing to fail. 
-  - Some images are in the local project structure but not referenced in the VS solution. This causes the Publishing to skip these files and not deploy them to the server. 
-  - Many references to local / Windows GAC / and other installed applications. Some required files live in multiple locations. i.e. One application references the .dll in the GAC and another application references the same file at a local relative location. 
-    - Why is this a problem?
-    - A build server would need to replicate this messy, non-standard configuration in order to automatically build the code in a pipeline. Missing files would prevent a clean build.
-  - excessive build warnings (unused variables) hide potentially important information.
-  - Secrets held in checked in configuration.
-  - Solutions
-    - Stadardize build outputs.
-    - Fix the missing references.
-    - Standardize solution references and utilize standard nuget feeds.
-    - Move secrets out of configuration and into a vault.
+    <b>Solution.</b> 
+   
+    Seperate the repository into three and move media onto a file share. Use git LFS if necessary but prefer to manage media requirements through deployment processes. Repositories will split into CODE, INFRASTRUCTURE and DATA. 
+    </div>
+</div>
+
+<div class="responsive-two-column-grid" markdown="1">
+  <div>
+   <b> Code, Build and Publish Issues. </b>
+  
+  * Years of team turnover and technical debt have left a code base requiring basic house cleaning. Building and deploying straight from the repository imposible.
+  * Build properties.
+  * Multiple project build outputs.
+  * Incorrect Web.config references.
+  * Passwords stored in configs.
+  * Some referenced image files are missing locally. This causes publishing to fail. 
+  * Some images are in the local project structure but not referenced in the VS solution. This causes the Publishing to skip these files and not deploy them to the server. 
+  * Many references to local / Windows GAC / and other installed applications. Some required files live in multiple locations. i.e. One application references the .dll in the GAC and another application references the same file at a local relative location.    
+  * excessive build warnings (unused variables) hide potentially important information.
+  * Secrets held in checked in configuration. 
+  </div>
+  <div markdown=1>
+    <b>Why is this a problem?</b>
+      A build server would need to replicate this messy, non-standard configuration in order to automatically build the code in a pipeline. Missing files would prevent a clean build.
+    
+    <b>Solution.</b> 
+  * Stadardize build outputs.
+   * Fix the missing references.
+   * Standardize solution references and utilize standard nuget feeds.
+   * Move secrets out of configuration and into a vault.
+    </div>
+</div>
 
 As shown a history of technical debt needs addressing before attempting an automation pipeline.
 Have you reviewed your system? Are you following best practices?
