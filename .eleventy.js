@@ -15,7 +15,7 @@ module.exports = (config) => {
   //config.addPlugin(pluginBundle);
   config.addPassthroughCopy('css');
   config.addPassthroughCopy('static');
-
+  config.addPassthroughCopy('posts/post-image');
   // Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	config.addPassthroughCopy({

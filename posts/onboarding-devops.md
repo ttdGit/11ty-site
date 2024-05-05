@@ -1,6 +1,8 @@
 ---
 title: Implementing Devops
 description: Onboarding devops into an existing team
+abstract: 'The management of code from storage to final deployment involves a bewildering array of technologies and methodologies to choose from. These choices are driven be team size, preferences and institutional and project requirements.'
+image: posts/post-image/devops-eco.jpg
 date: 2024-04-29
 tags:
   - post

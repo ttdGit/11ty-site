@@ -13,9 +13,12 @@ eleventyNavigation:
   weight: 0
 ---
 
-<div class="container">
-  <div class="hero">
+
+  
+  <div id="intro" >
     <h1>
+    <a href="#" class="logo">{% image "img/logo.jpg", "desc" %}</a>
+      <Header>
       {% if site.hero.title %}
         {% if pagination.pageNumber != 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}
         {{ site.hero.title }}
@@ -30,19 +33,9 @@ eleventyNavigation:
         {{ site.meta.description }}
       {% endif %}
     </p>
+    </header>
   </div>
 
-  <h2 class="section-title">
-    Latest Posts
-    {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
-  </h2>
-  {% include "components/postslist.njk" %}
-  <div class="pagination">
-      {% if pagination.previous %}
-        <a href="{{ pagination.href.previous | url }}" class="pagination__prev">&larr; Prev Page</a>
-      {% endif %}
-      {% if pagination.next %}
-        <a href="{{ pagination.href.next | url }}" class="pagination__next">Next Page &rarr;</a>
-      {% endif %}
-  </div>
+<div class="main">  
+  {% include "components/postslist-future.njk" %}
 </div>

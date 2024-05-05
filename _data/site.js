@@ -1,9 +1,9 @@
 module.exports = {
   meta: {
-    title: "DG Blog",
-    description: "DGs experiences blog.",
+    title: "DudeByte",
+    description: "Dudes Bits and Bytes.",
     lang: "en",
-    siteUrl: "https://example.com/",
+    siteUrl: "https://dudebyte.me/",
   },
   feed: { // used in feed.xml.njk
     subtitle: "Lorem ipsum dolor sit amet consecuteor",
@@ -14,7 +14,8 @@ module.exports = {
     authorEmail: "johndoe@example.com"
   },
   hero: { // used in hero section of main page ie. index.html.njk
-    title: "DGs anamnesis bin",
-    description: "Stuff I want to recall."
+    title: "DudeByte",
+    description: "Dudes Bits and Bytes. He's a dude. He likes dude stuff.",
+    logo: "img/logo.jpg"
   }
 }
