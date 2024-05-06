@@ -25,6 +25,7 @@ trigger:
 ```
 
 The pool identifies what type of vm is to be used, and if it hosted by you or Microsoft.
+
 Windows
 ```yaml
 pool:

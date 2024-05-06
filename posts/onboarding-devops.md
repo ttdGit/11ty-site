@@ -9,14 +9,15 @@ tags:
 ---
 The management of code from storage to final deployment involves a bewildering array of technologies and methodologies to choose from. These choices are driven be team size, preferences and institutional and project requirements.
 
-### What technologies are in use or needed?
+{% image "../img/devops-eco.jpg", "What technologies to use?" %}
+
+### An infrastructure analysis could drive some choices.
 {% image "../img/devops-tech-eco-infra-2.png", "What technologies are in use." %}
 {% image "../img/devops-tech-eco-deploy.png", "What technologies are in use." %}
 * Non-exhaustive typical use cases. 
 
 ##### Alternatives that manage all infrastructure for you.
-
-OutSystems...
+{% image "../img/outsystems.png", "Low code technologies." %}
 
 ### What practices are in use?
 
